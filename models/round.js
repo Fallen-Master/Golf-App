@@ -1,36 +1,36 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Round extends Model {}
+class Round extends Model { }
 
 Round.init(
     {
-        id:{
-            type:DataTypes.INTEGER,
+        id: {
+            type: DataTypes.INTEGER,
             allowNull: false,
-            primaryKey:true,
+            primaryKey: true,
             autoIncrement: true,
         },
-        courseName:{
+        courseName: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        date:{
+        date: {
             type: DataTypes.DATE,
             defaultValue: DataTypes.NOW,
-            allowNull:false,
+            allowNull: false,
         },
-        score:{
+        score: {
             type: DataTypes.INTEGER,
-            allowNull:false,
+            allowNull: false,
         },
-        par:{
-            type:DataTypes.INTEGER,
-            allowNull:false,
+        par: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
         },
-        comment:{
+        comment: {
             type: DataTypes.TEXT,
-            allowNull:true,
+            allowNull: true,
         },
         user_id: {
             type: DataTypes.INTEGER,
