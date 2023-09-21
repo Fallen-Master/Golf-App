@@ -1,6 +1,6 @@
 const logout = async () => {
     // Add API end point 
-    const response = await fetch('/', {
+    const response = await fetch('./', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
     });
