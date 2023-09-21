@@ -33,7 +33,7 @@ Round.init(
             allowNull:true,
         },
         user_id: {
-            tpye: DataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id',
