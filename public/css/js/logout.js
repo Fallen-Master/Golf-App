@@ -1,0 +1,15 @@
+const logout = async () => {
+    // Add API end point 
+    const response = await fetch('./', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    });
+  
+    if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert(response.statusText);
+    }
+  };
+  
+  document.querySelector('#logout').addEventListener('click', logout);
