@@ -12,7 +12,7 @@ Round.init(
             autoIncrement: true,
         },
         courseName:{
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         date:{
@@ -24,6 +24,29 @@ Round.init(
             type: DataTypes.INTEGER,
             allowNull:false,
         },
-        
+        par:{
+            type:DataTypes.INTEGER,
+            allowNull:false,
+        },
+        comment:{
+            type: DataTypes.TEXT,
+            allowNull:true,
+        },
+        user_id: {
+            tpye: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id',
+            }
+        }
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'round',
     }
-)
+);
+
+module.exports = Round
