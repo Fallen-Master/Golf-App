@@ -12,7 +12,7 @@ Club.init(
             autoIncrement: true,
         },
         name: {
-            type: DataType.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         user_id: {
@@ -22,7 +22,6 @@ Club.init(
                 key: 'id',
             }
         }
-
     },
     {
         sequelize,
