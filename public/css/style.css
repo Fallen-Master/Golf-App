@@ -8,5 +8,10 @@ body {
 }
 
 h1 {
-    font-family: "Yellowtail";
+    font-family: "Yellowtail", sans-serif;
+}
+
+footer {
+    font-family: "Yellowtail", sans-serif;
+    font-size: x-large;
 }
