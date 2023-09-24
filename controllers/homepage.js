@@ -5,12 +5,13 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   res.render('homepage');
 });
-
+//pulls up club names and yardage
 router.get('/clubRanges', withAuth, async (req, res) => {
   try {
-    const clubData = await User.findByPk(req.session.user_id, {
+    const clubData = await Club.findAll(req.session.user_id, {
       include: [
         {
+          order:'name',
           model: Club,
           attributes: ['name', 'yardage']
         }
@@ -26,16 +27,18 @@ router.get('/clubRanges', withAuth, async (req, res) => {
   }
 });
 
+//looks for all history descending
 router.get('/history', withAuth, async (req, res) => {
   try {
-    const historyData = await User.findByPk(req.session.user_id, {
-      include: [
-        {
-          model: Round,
-          attributes: ['courseName', 'date', 'score', 'par', 'comment']
-        }
-      ]
-    })
+    const historyData = await Round.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+      order: [
+        ['date', 'DESC'],
+      ],
+      attributes: ['courseName', 'date', 'score', 'par', 'comment'],
+    });
     const history = historyData.map((his) => his.get({ plain: true }));
     res.render('history', {
       history,
@@ -46,6 +49,7 @@ router.get('/history', withAuth, async (req, res) => {
   }
 });
 
+//Looks for previous fiv games
 router.get('./startSession', withAuth, async (req, res) =>{
   try {
    const historyData = await Round.findAll({
