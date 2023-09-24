@@ -8,9 +8,9 @@ router.get('/', async (req, res) => {
 //pulls up club names and yardage
 router.get('/clubRanges', withAuth, async (req, res) => {
   try {
-    const clubData = await Club.findall({
+    const clubData = await Club.findAll({
       where:{
-        user_id: req.session.logged_in
+        user_id: req.session.user_id,
       },
       order: [
         ['name', 'ASC']
@@ -68,12 +68,14 @@ router.get('/startSession', withAuth, async (req, res) =>{
       history,
       logged_in: req.session.logged_in
     });
+  } catch(err) {
+    res.status(500).json(err)
   }
  
 })
-
+// if user is logged in it takes them to the thier history
 router.get('/login', (req, res) => { 
-  if (req.session.logged_in) {// if user is logged in it takes them to the thier history
+  if (req.session.logged_in) {
     res.redirect('/history');
     return;
   }
