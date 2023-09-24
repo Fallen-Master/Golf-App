@@ -17,7 +17,7 @@ router.get('/clubRanges', withAuth, async (req, res) => {
       ]
     })
     const clubinfo = clubData.map((cl) => cl.get({ plain: true }));
-    res.render('dashboard', {
+    res.render('clubRanges', {
       clubinfo,
       logged_in: req.session.logged_in
     });
