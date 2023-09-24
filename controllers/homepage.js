@@ -46,8 +46,30 @@ router.get('/history', withAuth, async (req, res) => {
   }
 });
 
+router.get('./startSession', withAuth, async (req, res) =>{
+  try {
+   const historyData = await Round.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+      limit: 5,
+      order: [
+        ['date', 'DESC'],
+      ],
+      attributes: ['courseName', 'date', 'score', 'par', 'comment'],
+    });
+    
+    const history = historyData.map((his) => his.get({ plain: true }));
+    res.render('startSession', {
+      history,
+      logged_in: req.session.logged_in
+    });
+  }
+ 
+})
+
 router.get('/login', (req, res) => { 
-  if (req.session.logged_in) {// if user is logged in it takes them to the thier profile
+  if (req.session.logged_in) {// if user is logged in it takes them to the thier history
     res.redirect('/history');
     return;
   }
