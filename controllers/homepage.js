@@ -8,14 +8,14 @@ router.get('/', async (req, res) => {
 //pulls up club names and yardage
 router.get('/clubRanges', withAuth, async (req, res) => {
   try {
-    const clubData = await Club.findAll(req.session.user_id, {
-      include: [
-        {
-          order:'name',
-          model: Club,
-          attributes: ['name', 'yardage']
-        }
-      ]
+    const clubData = await Club.findall({
+      where:{
+        user_id: req.session.logged_in
+      },
+      order: [
+        ['name', 'ASC']
+      ],
+      attributes: ['name', 'yardage']
     })
     const clubinfo = clubData.map((cl) => cl.get({ plain: true }));
     res.render('clubRanges', {
@@ -49,8 +49,8 @@ router.get('/history', withAuth, async (req, res) => {
   }
 });
 
-//Looks for previous fiv games
-router.get('./startSession', withAuth, async (req, res) =>{
+//Looks for previous fivE games
+router.get('/startSession', withAuth, async (req, res) =>{
   try {
    const historyData = await Round.findAll({
       where: {
