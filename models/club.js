@@ -15,6 +15,10 @@ Club.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        yardage: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
         user_id: {
             tpye: DataTypes.INTEGER,
             references: {
