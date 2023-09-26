@@ -8,5 +8,23 @@
     "express-session": "^1.17.3",
     "mysql2": "^3.6.1",
     "sequelize": "^6.33.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "golf-app",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fallen-Master/Golf-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fallen-Master/Golf-App/issues"
+  },
+  "homepage": "https://github.com/Fallen-Master/Golf-App#readme"
 }
