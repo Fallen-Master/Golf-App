@@ -20,6 +20,10 @@ Round.init(
             defaultValue: DataTypes.NOW,
             allowNull: false,
         },
+       holes_played: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         score: {
             type: DataTypes.INTEGER,
             allowNull: false,
