@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Club extends Model { }
+class Club extends Model {}
 
 Club.init(
     {
@@ -11,12 +11,17 @@ Club.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
+        username: {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        yardage: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
         user_id: {
-            tpye: DataTypes.INTEGER,
+            type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'user',
                 key: 'id',
