@@ -16,7 +16,7 @@ Club.init(
             allowNull: false,
         },
         user_id: {
-            tpye: DataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id',
