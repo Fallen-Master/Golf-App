@@ -15,3 +15,60 @@ footer {
     font-family: "Yellowtail", sans-serif;
     font-size: x-large;
 }
+
+/* Login styling*/
+.card {
+    margin: 0 0 20px 0;
+    border: 3px solid red;
+    border-radius: var(--border-radius);
+    width: 600px;
+}
+
+  .card-header {
+      color: green;
+      background-color: blue;
+      padding: 1%;
+      border-radius: 10 10 0 0;
+      display: inline-block;
+    }
+    .float-left {
+        float: left;
+    } 
+    .float-right {
+        float: right;
+    }
+.card-text {
+    height: 150px;
+    padding: 1%;
+    margin: 5px 0;
+    font-size: 1.2rem;
+    border: 2px solid blue;
+    border-radius: blue;
+}
+.card-body {
+    padding: 1%;
+    text-align: center;
+}
+
+.btn {
+   font-size: 1.3rem;
+   text-decoration: none;
+   padding: 6px 5px;
+   width: 100%;
+   display: block;
+   margin: 5px 0;
+   border-radius: var(--border-radius);
+   color: var(--dark);
+   border: none;
+   outline: none;
+   background-color: green;
+   transform: translate(-1px, -1px);
+ }
+
+ .btn:hover {
+   color: yellow;
+   background-color: blueviolet;
+   transform: translate(0, 0);
+   cursor: pointer;
+ }
+
