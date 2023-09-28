@@ -21,12 +21,12 @@ footer {
     margin: 0 0 20px 0;
     border: 3px solid red;
     border-radius: var(--border-radius);
-    width: 600px;
+    /* width: 600px; */
 }
 
   .card-header {
       color: green;
-      background-color: blue;
+      /* background-color: blue; */
       padding: 1%;
       border-radius: 10 10 0 0;
       display: inline-block;

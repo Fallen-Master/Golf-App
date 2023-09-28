@@ -26,23 +26,23 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">Club ranges</a>
+            <a class="nav-link active" href="#">Club Ranges</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="#">History</a>
           </li>
           <li class="nav-item">
                 {{#if loggedIn}}             
-                    <a class="nav-item nav-link" href="/login" id="logout"><i class="bi bi-box-arrow-right"></i>Logout</a>
+                    <a class="nav-item nav-link active" href="/login" id="logout"><i class="bi bi-box-arrow-right "></i>Logout</a>
                 {{else}}
-                    <a class="nav-item nav-link" href="/login"><i class="bi bi-box-arrow-in-right"></i>Login</a>
+                    <a class="nav-item nav-link active" href="/login"><i class="bi bi-box-arrow-in-right "></i>Login</a>
                 {{/if}}
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <main>
+  <main class="d-flex justify-content-center">
     {{{ body }}}
   </main>
   <footer class="bg-medium text-center text-lg-start">
