@@ -5,10 +5,13 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   res.render('homepage');
 });
+router.get('/homepage', async (req, res) => {
+  res.render('homepage');
+});
 router.get('/signup', async (req, res) => {
   res.render('signup');
 });
-router.get('/startRound', (req, res)=>{
+router.get('/startRound', (req, res) => {
   res.render('playingPage')
 })
 
@@ -16,7 +19,7 @@ router.get('/startRound', (req, res)=>{
 router.post('/search', withAuth, async (req, res) => {
   try {
     const { searchQuery } = req.body;
-    
+
     // Perform a search query based on user input
     const courses = await CourseInfo.findAll({
       where: {
@@ -35,7 +38,7 @@ router.post('/search', withAuth, async (req, res) => {
 
 
 
-router.get('/login', (req, res) => { 
+router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
     return;
