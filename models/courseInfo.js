@@ -16,6 +16,18 @@ CourseInfo.init(
             allowNull: false,
             unique:true,
         },
+        website:{
+            type:DataTypes.STRING,
+            allowNull:false,
+        },
+        contactInfo: {
+            type:DataTypes.STRING,
+            allowNull:false,
+        },
+        hoursOfOp:{ 
+            type: DataTypes.STRING,
+            allowNull: false,
+        }
     },
     {
         sequelize,
