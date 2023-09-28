@@ -7,6 +7,6 @@ router.use('/user', userRoutes);
 
 router.use('/course', courseRoutes);
 
-router.use('/comment', commentRoute);
+router.use('/comment', commentRoutes);
 
 module.exports = router;
