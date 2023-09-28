@@ -4,17 +4,16 @@
           <div class="col-md-6">
             <div class="card border-success bg-transparent  ">
               <div class="card-body">
-                <h5 id="holeNumber" class="card-title">Hole #</h5>
+                <h5 id="holeNumber" class="card-title">Hole # <span id="currentHoleDisplay"></span></h5>
                 <p id="holePar" class="card-text">Par</p>
               </div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="card border-success bg-transparent">
-              <div class="card-body">
-                <a href="#" class="btn btn-success mt-2 mb-2">Previous Hole</a>
-                <a href="#" class="btn btn-success mt-2 mb-2">Next Hole</a>
-                <a href="#" class="btn btn-success mt-2 mb-2">Round Completed</a>
+              <div class="card-body" id="holeControl">
+                <a href="#" class="btn btn-success mt-2 mb-2 nextHole">Next Hole</a>
+                <a href="#" class="btn btn-success mt-2 mb-2 saveRound" id="saveButton">Round Completed</a>
               </div>
             </div>
           </div>
@@ -34,11 +33,11 @@
               <div class="col-md-6">
                 <div class="row">
                   <div class="card border-success bg-transparent">
-                    <div class="card-body">
+                    <div class="card-body" id="scoreDisplay">
                       <h5 class="card-title">Stroke Count</h5>
-                      <h5 id="strokeCount" class="card-title">count</h5>
-                      <a href="#" class="btn btn-success mt-2">-</a>
-                      <a href="#" class="btn btn-success mt-2">+</a>
+                      <h5 class="card-title" id="numberDisplay"></h5>
+                      <a href="#" class="btn btn-success mt-2 MinusButton" id="minusButton">-</a>
+                      <a href="#" class="btn btn-success mt-2 PlusButton" id="plusButton">+</a>
                     </div>
                   </div>
                 </div>
@@ -48,4 +47,7 @@
             </div>
           </div>
         </div>
+         <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        <script src="../public/js/score.js"></script>
     </body>
