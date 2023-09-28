@@ -7,6 +7,8 @@ router.get('/', async (req, res) => {
 });
 router.get('/homepage', async (req, res) => {
   res.render('homepage');
+});router.get('/clubRanges', async (req, res) => {
+  res.render('ClubRanges');
 });
 router.get('/signup', async (req, res) => {
   res.render('signup');
