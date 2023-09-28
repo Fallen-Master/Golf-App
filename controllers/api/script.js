@@ -1,3 +1,4 @@
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -20,5 +21,41 @@ function getAPI() {
     });
 }
 
+
+
+
+
+// Function to fetch and display course info
+function courseInfo() {
+    const apiUrl = 'https://golf-course-api.p.rapidapi.com/search?name=augusta%20national';
+  
+    const courseInfoContainer = document.getElementById('courseInfoContainer');
+  
+    courseInfoContainer.innerHTML = 'Fetching info...';
+  
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        courseInfoContainer.innerHTML = `
+          <h2>Address Details</h2>
+          <p>Street: ${data.address}</p>
+          <p>City: ${data.city}</p>
+          <p>State: ${data.state}</p>
+          <p>Zip Code: ${data.zip}</p>
+          <p>Country: ${data.country}</p>`;
+      })
+      .catch(error => {
+        console.error('There was a problem fetching the address data:', error);
+        courseInfoContainer.innerHTML = 'Failed to fetch address data.';
+      });
+  }
+  
+  document.getElementById('fetchButton').addEventListener('click', courseInfo);
+  
 
 getAPI()
