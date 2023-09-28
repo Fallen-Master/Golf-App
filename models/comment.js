@@ -15,6 +15,13 @@ Comment.init(
             type: DataTypes.TEXT,
             allowNull: true,
         },
+        course_info_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'course_info',
+                key: 'id',
+            }
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -28,8 +35,8 @@ Comment.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'round',
+        modelName: 'comment',
     }
 );
 
-module.exports = Round
+module.exports = Comment
