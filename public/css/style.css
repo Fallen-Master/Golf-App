@@ -72,3 +72,18 @@ footer {
    cursor: pointer;
  }
 
+
+ #club-information ul li{
+    color: black;
+    font-size: 150%;
+    list-style-type: none;
+ }
+
+ #club-information{
+    margin-right: 3%;
+    margin-left: 0%;
+ }
+
+ #club_range_head{
+    color:black;
+ }

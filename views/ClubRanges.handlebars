@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Golf Course Info including prior stats and club info" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yellowtail">
+  <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+  <title>Iron Birdies</title>
+</head>
+
+<body>
+  <header>
+    <div class="container-fluid text-center bg-success text-black">
+      <h1>Iron Birdies</h1>
+    </div>
+  </header>
+  <nav class="navbar navbar-expand text-black bg-medium">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse justify-content-center">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="homepage.handlebars">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ClubRanges.handlebars">Club ranges</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Log in</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <body>
+        <h2 id="club_range_head">Enter Club Range</h2>
+        <section id="club-information">
+            <ul>
+                <li>Driver: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>3-Wood: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>5-Wood: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>7-Wood: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>3 Hybrid: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>4 Hybrid: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>2 Iron: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>3 Iron: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>4 Iron: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>5 Iron: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>5 Iron: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>6 Iron: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>5 Iron: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>7 Iron: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>5 Iron: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>8 Iron: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>5 Iron: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>9 Iron: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>Pitching Wedge: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>Gap Wedge: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>Sand Wedge: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+                <li>Lob Wedge: <span id="current-range">0 yrds</span><input type="text" id="club-range" class="form-control me-2">  <button id="update-club" class="btn btn-success">Update</button></li>
+            
+        </section>
+    </body>    
+  </main>
+  <footer class="bg-medium text-center text-lg-start pt-5">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      "Sometimes, the biggest problem is in your head. You've got to believe!" - Jack Nicklaus
+    </div>
+  </footer>
+</html>
