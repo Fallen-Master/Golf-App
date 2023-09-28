@@ -17,7 +17,7 @@ function updateClubInfo(e) {
         txtBx.val('');
     }
     else{
-        rangeDisplay.text(`${clubRange} yrds`);
+        rangeDisplay.text(`${clubRange} yards`);
         txtBx.val('');
     }
     
