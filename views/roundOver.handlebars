@@ -5,7 +5,7 @@
             <li id="courseName"class="list-group-item text-bg-success">Course name here</li>
             <li id="date"class="list-group-item text-bg-success">Date here</li>
             <li id="coursePar"class="list-group-item text-bg-success">Par for Course here</li>
-            <li id="strokeTotal"class="list-group-item text-bg-success">Player score here</li>
+            <li id="strokeTotal"class="list-group-item text-bg-success" onload="displayScore()"></li>
           </ul>
         </div> 
         <div class="card mt-5 border-success text-success">
@@ -16,4 +16,7 @@
           </div>   
       </div>
       <button id="saveComments" type="button" class="btn btn-success mt-5">Save Comments</button>
+      <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+      <script src="../public/js/score.js"></script>
     </body>    

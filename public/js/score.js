@@ -9,6 +9,11 @@ let number = 0;
 numberDisplay.text(number);
 
 if (localStorage.getItem('savedScore') === null)
+{
+localStorage.setItem('savedScore', '0')
+}
+
+if (localStorage.getItem('savedScore') === null)
 { 
   localStorage.setItem('savedScore', number.toString());
   currentHoleDisplay.text('1');
@@ -31,10 +36,18 @@ function incrementNumber (){
     numberDisplay.text(number.toString());
 }
 
-function saveCurrentScore() { //THis is the function to workin dane
-    console.log('working')
-    localStorage.setItem('savedNumber', number.toString());
-    alert('score saved');
+function saveCurrentScore() { 
+    localStorage.setItem('finalScore', localStorage.getItem('savedScore'));
+    localStorage.setItem('savedScore', '0');
+    localStorage.setItem('currentHole', '1');
+
+    window.location.href = 'roundOver.handlebars';
+    setTimeout(function() {
+        const totalScoreDisplay = document.getElementById('strokeTotal');
+    console.log(totalScoreDisplay)
+    totalScoreDisplay.text(localStorage.getItem('finalScore'));
+      }, 1000);
+
 }
 
 function decrementNumber(){
@@ -42,6 +55,12 @@ function decrementNumber(){
         number--;
         numberDisplay.text(number);
     }
+}
+
+function displayScore(){
+    const totalScoreDisplay = document.getElementById('strokeTotal');
+            console.log(totalScoreDisplay)
+            totalScoreDisplay.text(localStorage.getItem('finalScore'));
 }
 
 function nextHole(){
@@ -57,9 +76,11 @@ function nextHole(){
     localStorage.setItem('savedScore', totalScore.toString());
     console.log(hole);
     if (hole <= 18) {
-        window.location.href = `playingPage.handlebars?hole=${hole}`;
+            window.location.href = `playingPage.handlebars?hole=${hole}`;
     } else {
+        localStorage.setItem('finalScore', localStorage.getItem('savedScore'));
         localStorage.setItem('savedScore', '0');
+        localStorage.setItem('currentHole', '1');
         window.location.href = 'roundOver.handlebars?score=' + totalScore;
     }
 }
