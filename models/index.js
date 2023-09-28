@@ -5,7 +5,7 @@ const CourseInfo = require('./courseInfo');
 
 User.hasMany(Comment, {
   foreignKey: 'user_id',
-  onDelete: 'CASCADE' 
+  onDelete: 'CASCADE'
 });
 
 

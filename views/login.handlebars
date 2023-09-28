@@ -1,23 +1,20 @@
-  <div class="card">
-    <h2 class="card-header">Enter username and password to sign up</h2>
-    <form id="signup-form" class="card-body">
+<div class="card w-50 p-3 d-flex justify-content-center">
+    <h2 class="card-header">Enter username and password to login</h2>
+    <form id="login-form" class="card-body">
         <div class="mb-6">
             <label for="username" class="form-label">Username</label>
-            <input placeholder="Enter username" type="username" class="form-control" id="username-signup">
-            <div id="usernameHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <input placeholder="Enter username" type="text" class="form-control" id="username">
         </div>
 
         <div class="mb-6">
             <label for="password" class="form-label">Password</label>
-            <input placeholder="Enter password" type="password" class="form-control" id="password-signup">
+            <input placeholder="Enter password" type="password" class="form-control" id="password">
             <div id="passwordHelp" class="form-text">Must be 4 digits long.</div>
         </div>
-
-        <div class="mb-6">
-            <a href="/login">Already have an account? Login here</a>
-        </div>
-
-        <button type="submit" class="btn btn-priary" id="login-btn">Sign Up</button>
+        <button type="submit" class="btn btn-primary" id="login-btn">Login</button>
     </form>
+    <div class="mb-6">
+        <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+    </div>
 </div>
-<script src="./js/login.js"></script>
+<script src="/js/login.js"></script>

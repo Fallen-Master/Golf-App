@@ -12,10 +12,22 @@ CourseInfo.init(
             autoIncrement: true,
         },
         name: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: false,
-            unique:true,
+            unique: true,
         },
+        website: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        contact: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        hoursOfOp: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        }
     },
     {
         sequelize,
