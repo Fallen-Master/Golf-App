@@ -12,7 +12,7 @@ CourseInfo.init(
             autoIncrement: true,
         },
         name: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: false,
             unique:true,
         },
