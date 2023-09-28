@@ -9,7 +9,7 @@ router.get('/')
 // if user is logged in it takes them to the thier history
 router.get('/login', (req, res) => { 
   if (req.session.logged_in) {
-    res.redirect('/history');
+    res.redirect('/hompage');
     return;
   }
   res.render('login');
