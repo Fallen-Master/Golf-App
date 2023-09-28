@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Round extends Model { }
+class Comment extends Model { }
 
-Round.init(
+Comment.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,30 +11,16 @@ Round.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        courseName: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        date: {
-            type: DataTypes.DATE,
-            defaultValue: DataTypes.NOW,
-            allowNull: false,
-        },
-       holes_played: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        score: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        par: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
         comment: {
             type: DataTypes.TEXT,
             allowNull: true,
+        },
+        course_info_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'course_info',
+                key: 'id',
+            }
         },
         user_id: {
             type: DataTypes.INTEGER,
@@ -49,8 +35,8 @@ Round.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'round',
+        modelName: 'comment',
     }
 );
 
-module.exports = Round
+module.exports = Comment
