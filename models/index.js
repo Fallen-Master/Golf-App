@@ -1,25 +1,16 @@
 const Club = require('./club');
-const Round = require('./round');
+const Comment = require('./round');
 const User = require('./user');
 
 // User and Round relationship
-User.hasMany(Round, {
+User.hasMany(Comment, {
     foreignKey: 'user_id'
 });
-Round.belongsTo(User, {
-    foreignKey: 'user_id'
-});
-
-// User and Club relationship
-User.hasMany(Club, {
-    foreignKey: 'user_id'
-});
-Club.belongsTo(User, {
+Comment.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
 module.exports = {
     Club,
-    Round,
     User
 };
