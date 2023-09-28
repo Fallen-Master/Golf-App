@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Comment, User } = require('../../models');
 const { courseCheck } = require('../../utils/courseCheck');
+const withAuth = require('../../utils/auth')
 
 // Create a comment for a specific golf course
 router.post('/add-comment/:courseName', withAuth, async (req, res) => {

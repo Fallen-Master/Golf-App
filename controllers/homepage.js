@@ -5,12 +5,20 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   res.render('homepage');
 });
+router.get('/signup', async (req, res) => {
+  res.render('signup');
+});
+router.get('/startRound', (req, res)=>{
+  res.render('playingPage')
+})
+
+
 router.post('/search', withAuth, async (req, res) => {
   try {
     const { searchQuery } = req.body;
     
     // Perform a search query based on user input
-    const courses = await Club.findAll({
+    const courses = await CourseInfo.findAll({
       where: {
         name: {
           [Op.iLike]: `%${searchQuery}%`, // Use case-insensitive search
@@ -23,9 +31,13 @@ router.post('/search', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+
+
 router.get('/login', (req, res) => { 
   if (req.session.logged_in) {
-    res.redirect('/hompage');
+    res.redirect('/');
     return;
   }
   res.render('login');
