@@ -21,7 +21,7 @@ CourseInfo.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'courseInfo',
+        modelName: 'course_info',
     }
 );
 

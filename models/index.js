@@ -15,13 +15,13 @@ Comment.belongsTo(User, {
 
 
 Comment.belongsTo(CourseInfo, {
-  foreignKey: 'courseInfo',
+  foreignKey: 'course_info_id',
   as: 'course_information'
 });
 
 
 CourseInfo.hasMany(Comment, {
-  foreignKey: 'courseInfo',
+  foreignKey: 'course_info_id',
   as: 'course_comments'
 });
 
