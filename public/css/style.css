@@ -81,9 +81,22 @@ footer {
 
  #club-information{
     margin-right: 3%;
-    margin-left: 0%;
+    margin-left: 3%;
  }
 
  #club_range_head{
-    color:black;
+    color:white;
+    font-size: 2em;
+    margin-bottom: 4%;
+    text-align: center;
  }
+ #club-information ul li{
+    background-color: #f5f5f5;
+    padding: 2%;
+    margin-bottom: 1%;
+ }
+
+ #club-information ul{
+    padding-left: 0%;
+ }
+
