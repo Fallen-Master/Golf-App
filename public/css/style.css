@@ -21,12 +21,12 @@ footer {
     margin: 0 0 20px 0;
     border: 3px solid red;
     border-radius: var(--border-radius);
-    width: 600px;
+    /* width: 600px; */
 }
 
   .card-header {
       color: green;
-      background-color: blue;
+      /* background-color: blue; */
       padding: 1%;
       border-radius: 10 10 0 0;
       display: inline-block;
@@ -70,5 +70,33 @@ footer {
    background-color: blueviolet;
    transform: translate(0, 0);
    cursor: pointer;
+ }
+
+
+ #club-information ul li{
+    color: black;
+    font-size: 150%;
+    list-style-type: none;
+ }
+
+ #club-information{
+    margin-right: 3%;
+    margin-left: 3%;
+ }
+
+ #club_range_head{
+    color:white;
+    font-size: 2em;
+    margin-bottom: 4%;
+    text-align: center;
+ }
+ #club-information ul li{
+    background-color: #f5f5f5;
+    padding: 2%;
+    margin-bottom: 1%;
+ }
+
+ #club-information ul{
+    padding-left: 0%;
  }
 

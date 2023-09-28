@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Club extends Model {}
+class CourseInfo extends Model { }
 
-Club.init(
+CourseInfo.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,21 +11,22 @@ Club.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        username: {
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+        },
+        website: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        yardage: {
-            type: DataTypes.INTEGER,
+        contact: {
+            type: DataTypes.STRING,
             allowNull: false,
         },
-        user_id: {
-            type: DataTypes.INTEGER,
+        hoursOfOp: {
+            type: DataTypes.STRING,
             allowNull: false,
-            references: {
-                model: 'user',
-                key: 'id',
-            }
         }
     },
     {
@@ -33,8 +34,8 @@ Club.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'club',
+        modelName: 'course_info',
     }
 );
 
-module.exports = Club; 
+module.exports = CourseInfo
