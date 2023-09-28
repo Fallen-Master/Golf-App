@@ -1,49 +1,24 @@
 <body>
-  <header>
-    <div class="container-fluid text-center bg-success text-black">
-      <h1>Iron Birdies</h1>
-    </div>
-  </header>
-  <nav class="navbar navbar-expand text-black bg-medium">
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse justify-content-center">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Club ranges</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">History</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Log in</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
   <main>
     <body>
-      <div id="search" class="text-center pb-2">
+      <div id="search" class="d-flex justify-content-center input-group mb-3 pb-2">
         <input class=”form-control”  type=”text” placeholder=”Search”>
+        <button type="button" class="btn btn-success">Submit</button>
         </div>  
-    <div class="container container-sm text-center"
-          <p id="searchResults" class="pt-3">List of course search results</p>
-    </div>
+      
+  
     <div class="container pt-5 container-sm">
       <div class="row text-center">
         <div class="col-md-12">
           <div class="card border-success bg-transparent p-5 device-width">
             <div class="card-body">
               <ul class="list-group list-group-flush bg-transparent">
-                <li id="address"class="list-group-item bg-transparent">Address</li>
-                <li id="contactInfo"class="list-group-item bg-transparent">Contact Info</li>
-                <li id="hours"class="list-group-item bg-transparent">Hours of Operation</li>
-                <li id="Website"class="list-group-item bg-transparent">Website</li>
+                <li id="address" class="list-group-item bg-transparent">Address</li>
+                <li id="contactInfo" class="list-group-item bg-transparent">Contact Info</li>
+                <li id="hours" class="list-group-item bg-transparent">Hours of Operation</li>
+                <li id="Website" class="list-group-item bg-transparent">Website</li>
               </ul>
-              <button type="button" class="btn btn-success mt-5">Start Round</button>
+              <button id="start-round", href="/startRound"type="button" class="btn btn-success mt-5">Start Round</button>
             </div>
           </div>
         </div>
