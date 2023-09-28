@@ -32,18 +32,14 @@
             <a class="nav-link" href="#">History</a>
           </li>
           <li class="nav-item">
-                {{#if logged_in}}             
-                    <a class="nav-item nav-link" href="/login" id="logout"><i class="bi bi-box-arrow-right"></i>Logout</a>
-                {{else}}
-                    <a class="nav-item nav-link" href="/login"><i class="bi bi-box-arrow-in-right"></i>Login</a>
-                {{/if}}
+            <a class="nav-link" href="#">Log in</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    {{{ body }}}
+    <input class=”form-control” type=”text” placeholder=”Search”>
   </main>
   <footer class="bg-medium text-center text-lg-start">
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
