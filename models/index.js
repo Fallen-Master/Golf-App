@@ -1,16 +1,28 @@
-const Club = require('./club');
-const Comment = require('./round');
-const User = require('./user');
+const User = require('./User');
+const Comment = require('./Comment');
+const CourseInfo = require('./courseInfo');
 
-// User and Round relationship
+
 User.hasMany(Comment, {
-    foreignKey: 'user_id'
-});
-Comment.belongsTo(User, {
-    foreignKey: 'user_id'
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE' 
 });
 
-module.exports = {
-    Club,
-    User
-};
+
+Comment.belongsTo(User, {
+  foreignKey: 'user_id'
+});
+
+
+Comment.belongsTo(CourseInfo, {
+  foreignKey: 'courseInfo',
+  as: 'course_information'
+});
+
+
+CourseInfo.hasMany(Comment, {
+  foreignKey: 'courseInfo',
+  as: 'course_comments'
+});
+
+module.exports = { User, Comment, CourseInfo };
