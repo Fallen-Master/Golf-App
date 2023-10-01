@@ -87,8 +87,8 @@ function nextHole(){
 
 scoreDisplay.on('click', '.PlusButton', incrementNumber);
 scoreDisplay.on('click', '.MinusButton', decrementNumber);
-holeControls.on('click', '.nextHole', nextHole);
-holeControls.on('click', '.saveRound', saveCurrentScore); 
+// holeControls.on('click', '.nextHole', nextHole);
+// holeControls.on('click', '.saveRound', saveCurrentScore); 
 });
 
 
