@@ -11,7 +11,6 @@ $(function () {
         displayElem.text(number.toString());
     }
 
-    // Initialize localStorage if not done already
     if (!localStorage.getItem('savedScore')) {
         localStorage.setItem('savedScore', '0');
         currentHoleDisplay.text('1');
@@ -34,6 +33,5 @@ $(function () {
         if (number > 0) setNumber(numberDisplay, --number);
     });
 
-    // TODO: Add other functions and event bindings as required
 
 });
