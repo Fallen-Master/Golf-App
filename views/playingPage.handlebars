@@ -1,53 +1,29 @@
-    <body>
-      <div class="container pt-5 container-sm">
-        <div class="row text-center">
-          <div class="col-md-6">
-            <div class="card border-success bg-transparent  ">
-              <div class="card-body">
-                <h5 id="holeNumber" class="card-title">Hole # <span id="currentHoleDisplay"></span></h5>
-                <p id="holePar" class="card-text">Par</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card border-success bg-transparent">
-              <div class="card-body" id="holeControl">
-                <a href="#" class="btn btn-success mt-2 mb-2 nextHole">Next Hole</a>
-                <a href="#" class="btn btn-success mt-2 mb-2 saveRound" id="saveButton">Round Completed</a>
-              </div>
-            </div>
-          </div>
-          <div class="container pt-5">
-            <div class="row text-center">
-              <div class="col-md-6">
-                <div class="card border-success bg-transparent">
-                  <div class="card-body">
-                    <h5 class="card-title">Hole Information</h5>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item bg-transparent">Yards to pin here</li>
-                      <li class="list-group-item bg-transparent">Grass type here</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="row">
-                  <div class="card border-success bg-transparent">
-                    <div class="card-body" id="scoreDisplay">
-                      <h5 class="card-title">Stroke Count</h5>
-                      <h5 class="card-title" id="numberDisplay"></h5>
-                      <a href="#" class="btn btn-success mt-2 MinusButton" id="minusButton">-</a>
-                      <a href="#" class="btn btn-success mt-2 PlusButton" id="plusButton">+</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                </div>
-              </div>
-            </div>
+<div class="container pt-5 container-sm">
+  {{#each holes as |hole|}}
+  <div class="row text-center">
+    <div class="col-md-6">
+      <div class="card border-success bg-transparent  ">
+        <div class="card-body">
+          <h5 id="holeNumber" class="card-title">Hole # {{hole.Hole}}</h5>
+          <p id="holePar" class="card-text">Par {{hole.Par}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="card border-success bg-transparent">
+          <div class="card-body" class="scoreDisplay" data-holeNumber="{{hole.Hole}}">
+            <h5 class="card-title">Stroke Count</h5>
+            <h5 class="card-title" class="numberDisplay"></h5>
+            <a href="#" class="btn btn-success mt-2 MinusButton">-</a>
+            <a href="#" class="btn btn-success mt-2 PlusButton">+</a>
           </div>
         </div>
-         <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-        <script src="../public/js/score.js"></script>
-    </body>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+  integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script src="/js/score.js"></script>

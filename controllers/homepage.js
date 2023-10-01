@@ -13,32 +13,29 @@ router.get('/homepage', async (req, res) => {
 router.get('/signup', async (req, res) => {
   res.render('signup');
 });
-router.get('/startRound', (req, res) => {
-  res.render('playingPage')
-})
+router.get('/playingPage/:courseName', (req, res) => {
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'a41af16ff5msh7a6c6e9df83c957p184bbajsncd5a40f520fb',
+      'X-RapidAPI-Host': 'golf-course-api.p.rapidapi.com'
+    }
+  };
+  const currentCourse = req.params.courseName
+  const requestUrl = `https://golf-course-api.p.rapidapi.com/search?name=${currentCourse}`;
 
-
-router.post('/search', withAuth, async (req, res) => {
-  try {
-    const { searchQuery } = req.body;
-
-    // Perform a search query based on user input
-    const courses = await CourseInfo.findAll({
-      where: {
-        name: {
-          [Op.iLike]: `%${searchQuery}%`, // Use case-insensitive search
-        },
-      },
+  fetch(requestUrl, options)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(JSON.stringify(data))
+      res.render('playingPage', {
+        holes:data[0].scorecard
+      } )
     });
-
-    res.render('homepage', { courses, user: req.session.user });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-
-
+ 
+})
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
