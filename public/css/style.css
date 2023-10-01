@@ -8,25 +8,23 @@ body {
 }
 
 h1 {
-    font-family: "Yellowtail", sans-serif;
+    font-family: sans-serif;
 }
 
 footer {
-    font-family: "Yellowtail", sans-serif;
+    font-family: sans-serif;
     font-size: x-large;
 }
 
-/* Login styling*/
+/* card styling*/
 .card {
     margin: 0 0 20px 0;
-    border: 3px solid red;
-    border-radius: var(--border-radius);
-    /* width: 600px; */
+    border: 3px solid grey;
+    border-radius: var(--brder-radius);
 }
 
   .card-header {
       color: green;
-      /* background-color: blue; */
       padding: 1%;
       border-radius: 10 10 0 0;
       display: inline-block;
@@ -42,8 +40,8 @@ footer {
     padding: 1%;
     margin: 5px 0;
     font-size: 1.2rem;
-    border: 2px solid blue;
-    border-radius: blue;
+    border: 2px solid grey;
+    color: white;
 }
 .card-body {
     padding: 1%;
@@ -66,10 +64,14 @@ footer {
  }
 
  .btn:hover {
-   color: yellow;
-   background-color: blueviolet;
+   color: white;
+   background-color: lightgreen;
    transform: translate(0, 0);
    cursor: pointer;
+ }
+
+ .container {
+    color: white;
  }
 
 
