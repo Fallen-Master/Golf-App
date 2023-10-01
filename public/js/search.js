@@ -1,9 +1,9 @@
 const options = {
     method: 'GET',
-	headers: {
+    headers: {
         'X-RapidAPI-Key': 'a41af16ff5msh7a6c6e9df83c957p184bbajsncd5a40f520fb',
-		'X-RapidAPI-Host': 'golf-course-api.p.rapidapi.com'
-	}
+        'X-RapidAPI-Host': 'golf-course-api.p.rapidapi.com'
+    }
 };
 
 function getAPI() {
@@ -17,38 +17,39 @@ function getAPI() {
         })
         .then(function (data) {
             console.log(data)
-            
-            localStorage.setItem('courseResult', "");
+
             localStorage.setItem('courseResult', JSON.stringify(data));
         });
 
-    }
+}
 
-function searchBtn(e){
+function searchBtn(e) {
     console.log("hello");
     e.preventDefault();
     getAPI();
-  displayCourseResults();  
+    displayCourseResults();
 }
 
 
-function displayCourseResults(){
-    
-    var courseData = JSON.parse(localStorage.getItem('courseResult')); 
+function displayCourseResults() {
+
+    var courseData = JSON.parse(localStorage.getItem('courseResult'));
     var data;
-    if (courseData && courseData.length > 0){data=courseData}
+    if (courseData && courseData.length > 0) { data = courseData }
     var resultsContainer = $('#displayResult');
-     resultsContainer.empty();
-     if (data && data.length > 0) { 
-         // function to dynamically add the container and the styling to the HTML
-         data.forEach(function(course) {
-             if (course.name){var titleName = `<h1 class="title has-text-weight-bold card-title">${course.name}
-             </h1>`} else { var titleName = 
-                `<h1 class="title has-text-weight-bold card-title">${course.title} 
+    resultsContainer.empty();
+    if (data && data.length > 0) {
+        // function to dynamically add the container and the styling to the HTML
+        data.forEach(function (course) {
+            if (course.name) {
+                var titleName = `<h1 class="title has-text-weight-bold card-title">${course.name}
+             </h1>`} else {
+                var titleName =
+                    `<h1 class="title has-text-weight-bold card-title">${course.title} 
                 </h1>`}
-                var displayCourseHTML = `
+            var displayCourseHTML = `
                 <div class="card recipe-card mt-5">
-                <div class="card-content"> `+ titleName +`
+                <div class="card-content"> `+ titleName + `
                 <p class="subtitle card-website">${course.website}</p> 
                 <p class="card-address">${course.address}</p>
                 <p class="card-address">${course.phone}</p>
@@ -56,16 +57,16 @@ function displayCourseResults(){
                 </div>
                 <footer class="card-footer">
                 <div class="buttons is-centered">
-                      <button id="start-round">Start Round</button>
+                      <button data-name="${course.name}" class="start-round">Start Round</button>
                   </div>
                 </footer>
-                <script src="./public/js/startbtn.js" rel="javascript"></script>
+                <script src="/js/startbtn.js" rel="javascript"></script>
                 `;
-                resultsContainer.append(displayCourseHTML);
-            });
-        } else {
-            resultsContainer.append('<p id="noCourses"></p>');
-        }
+            resultsContainer.append(displayCourseHTML);
+        });
+    } else {
+        resultsContainer.append('<p id="noCourses"></p>');
     }
-    
-    $('#search-course').on('click',searchBtn)
+}
+
+$('#search-course').on('click', searchBtn)
