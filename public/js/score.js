@@ -1,7 +1,7 @@
 console.log("hello World");
 
 $(function () {
-    const currentHoleDisplay = $("#currentHoleDisplay");
+    
 
     function getCurrentNumber(displayElem) {
         return parseInt(displayElem.text(), 10);
@@ -10,24 +10,15 @@ $(function () {
     function setNumber(displayElem, number) {
         displayElem.text(number.toString());
     }
-
-    if (!localStorage.getItem('savedScore')) {
-        localStorage.setItem('savedScore', '0');
-        currentHoleDisplay.text('1');
-    }
-
-    if (!localStorage.getItem('currentHole')) {
-        localStorage.setItem('currentHole', '1');
-        currentHoleDisplay.text(localStorage.getItem('currentHole'));
-    }
-
     $('.game-playing').on('click', '.PlusButton', function (event) {
+        event.preventDefault()
         const numberDisplay = $(this).siblings('.numberDisplay');
         let number = getCurrentNumber(numberDisplay);
         setNumber(numberDisplay, ++number);
     });
 
     $('.game-playing').on('click', '.MinusButton', function (event) {
+        event.preventDefault()
         const numberDisplay = $(this).siblings('.numberDisplay');
         let number = getCurrentNumber(numberDisplay);
         if (number > 0) setNumber(numberDisplay, --number);
